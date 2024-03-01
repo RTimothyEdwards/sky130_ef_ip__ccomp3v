@@ -1,0 +1,88 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO comparator_top
+  CLASS BLOCK ;
+  FOREIGN sky130_ef_ip__ccomp3v ;
+  ORIGIN 1.000 1.325 ;
+  SIZE 59.825 BY 52.495 ;
+  PIN VINM
+    PORT
+      LAYER met2 ;
+        RECT -0.120 14.085 15.430 14.585 ;
+    END
+  END VINM
+  PIN VINP
+    PORT
+      LAYER met2 ;
+        RECT -0.120 15.260 24.595 15.760 ;
+    END
+  END VINP
+  PIN VDD
+    PORT
+      LAYER met4 ;
+        RECT 2.425 48.875 8.425 50.180 ;
+    END
+  END VDD
+  PIN VSS
+    PORT
+      LAYER met4 ;
+        RECT 13.850 34.080 19.850 50.180 ;
+    END
+  END VSS
+  PIN VOUT
+    PORT
+      LAYER met2 ;
+        RECT 52.220 20.740 58.825 21.135 ;
+    END
+  END VOUT
+  PIN DVDD
+    PORT
+      LAYER met2 ;
+        RECT 53.555 24.525 58.560 27.050 ;
+    END
+  END DVDD
+  PIN DVSS
+    PORT
+      LAYER met2 ;
+        RECT 49.550 -0.980 58.490 0.605 ;
+    END
+  END DVSS
+  OBS
+      LAYER nwell ;
+        RECT -1.000 50.085 54.180 51.170 ;
+        RECT -1.000 40.025 25.420 50.085 ;
+        RECT -1.000 29.495 0.575 40.025 ;
+        RECT -1.000 29.290 46.655 29.495 ;
+        RECT -1.000 27.715 54.180 29.290 ;
+        RECT -1.000 15.405 48.180 27.715 ;
+        RECT -1.000 0.250 0.575 15.405 ;
+        RECT -1.000 -1.325 48.180 0.250 ;
+      LAYER li1 ;
+        RECT -0.570 -0.895 58.475 50.740 ;
+      LAYER met1 ;
+        RECT -0.360 -0.980 58.505 50.425 ;
+      LAYER met2 ;
+        RECT -0.050 27.330 58.490 50.425 ;
+        RECT -0.050 24.245 53.275 27.330 ;
+        RECT -0.050 21.415 58.490 24.245 ;
+        RECT -0.050 20.460 51.940 21.415 ;
+        RECT -0.050 16.040 58.490 20.460 ;
+        RECT 24.875 14.980 58.490 16.040 ;
+        RECT -0.050 14.865 58.490 14.980 ;
+        RECT 15.710 13.805 58.490 14.865 ;
+        RECT -0.050 0.885 58.490 13.805 ;
+        RECT -0.050 0.605 49.270 0.885 ;
+      LAYER met3 ;
+        RECT 0.270 2.160 52.450 49.175 ;
+      LAYER met4 ;
+        RECT 1.000 48.475 2.025 48.875 ;
+        RECT 8.825 48.475 13.450 48.875 ;
+        RECT 1.000 33.680 13.450 48.475 ;
+        RECT 20.250 33.680 38.575 48.875 ;
+        RECT 1.000 1.520 38.575 33.680 ;
+  END
+END comparator_top
+END LIBRARY
+

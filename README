@@ -1,0 +1,71 @@
+3.3V Continuous comparator with rail-to-rail operation and 1mV resolution
+-------------------------------------------------------------------------
+Design is a basic amplifier followed by a buffer (non-latching)
+
+To make it rail-to-rail operation, two things were done:
+
+(1) Use wide range (2-stage) amplifiers.  This yields expanded
+    range at the expense of gain.
+
+(2) Wide range amplifiers still fail when the input voltage
+    common mode goes below the common voltage of the differential
+    pair.  To avoid this, two amplifiers were made, one with
+    nFET inputs, and one with pFET inputs.  The outputs are
+    combined.
+
+That design went to tapeout on CI2304 (Blizzard, user project for
+Caravel).  Upon measuring silicon, it was discovered that the
+upper range (above about 2.7V), where the pFET amplifier stops
+working and the nFET amplifier takes over, has a different
+offset, which translates to a jog in the ADC output.
+
+This effect was analyized on 12/21/2023 and found to exist in
+simulation.  The error is a combination of several causes, but
+the upshot is that correcting requires the following additional
+design steps:
+
+(1) Increase overall current bias.  The original current was
+    set at ~40uA, so this was increased to 80uA (resistor
+    changed from 200 squares to 100). (Note that the current
+    bias generator and the comparator have no enable input,
+    which they need.  This has not been done yet).  This
+    corrects a problem with a slow response and increases
+    the response time to < 1us for 1MHz operation.
+
+(2) Cascode the current sources.  A reasonable approach is for
+    the cascode transistor to take the opposite bias (e.g.,
+    VBP for the cascode to the transistor gated by VBN), and
+    then adjust the length of the cascode to match the pFET and
+    nFET amplifiers.
+
+    The cascode prevents the bias current from changing as much
+    due to the common voltage of the differential pair.
+
+(3) Cascode the nFET output transistor;  like the current source
+    cascodes, gate with VBP and adjust length as necessary to
+    match the nFET and pFET amplifiers.
+
+    The cascode adjusts for differences in output gain between
+    the nFET and pFET amplifiers.
+
+(4) The pFET mirror for generating VBP was adjusted 
+
+    Specifically, the testbench ran three different common
+    mode voltages at 0, 1.65, and 3.3V.  The cascodes were
+    adjusted until the amplifier(s) output was approximately
+    the same magnitude and offset for all three common mode
+    voltages.
+
+(5) The output voltage comes out centered a bit high, so the
+    pFET of the first inverter was increased in size (W/L)
+    to center it on the response.
+
+(6) Because the output inverter increased the capacitance and
+    lessened the amplitude of the amplifier output, the
+    output transistor sizes of both the nFET and pFET amplifiers
+    was increased to recover a decent amount of amplitude for
+    a 1mV input differential.
+
+The current design in simulation has a constant response across
+all common mode voltages from 0 to 3.3V and will toggle on an
+input difference of 1mV.
