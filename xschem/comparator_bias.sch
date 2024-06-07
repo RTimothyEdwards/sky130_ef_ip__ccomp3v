@@ -45,7 +45,7 @@ N 150 -260 220 -260 { lab=VBN}
 N 220 -270 220 -90 { lab=VBN}
 N 220 -160 500 -160 { lab=VBN}
 N 220 -280 220 -270 { lab=VBN}
-N -20 -610 20 -610 { lab=VSS}
+N -20 -610 20 -610 { lab=VDD}
 N 720 -410 720 -120 { lab=VBP}
 N 40 -700 40 -640 { lab=VDD}
 N 720 -470 720 -410 { lab=VBP}
@@ -78,12 +78,6 @@ N 1050 -120 1070 -120 { lab=VSS}
 N 1070 -240 1070 -190 { lab=VBP}
 N 720 -0 1070 0 { lab=VSS}
 N 720 -240 1070 -240 { lab=VBP}
-C {sky130_fd_pr/res_high_po.sym} 40 -610 0 0 {name=R1
-W=0.69
-L=69
-model=res_high_po
-spiceprefix=X
-mult=1}
 C {devices/lab_wire.sym} 400 -550 0 0 {name=l1 sig_type=std_logic lab=VDD}
 C {devices/lab_wire.sym} 400 -90 0 0 {name=l2 sig_type=std_logic lab=VSS}
 C {devices/lab_wire.sym} 0 -450 0 1 {name=l3 sig_type=std_logic lab=VDD}
@@ -237,4 +231,9 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {devices/lab_wire.sym} -20 -610 0 1 {name=l10 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} -20 -610 0 1 {name=l10 sig_type=std_logic lab=VDD}
+C {sky130_fd_pr/res_high_po_1p41.sym} 40 -610 0 0 {name=R2
+L=140
+model=res_high_po_1p41
+spiceprefix=X
+mult=1}

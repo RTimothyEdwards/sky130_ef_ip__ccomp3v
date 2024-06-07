@@ -24,7 +24,7 @@ lab=VINM}
 N 270 -290 370 -290 {
 lab=VBP}
 N 270 -270 370 -270 {
-lab=VPN}
+lab=VBN}
 N 120 -200 210 -200 {
 lab=DVDD}
 N 120 -180 210 -180 {
@@ -33,8 +33,8 @@ N 120 -180 210 -180 {
 lab=DVSS}
 N 670 -330 730 -330 {
 lab=#net1}
-N 810 -330 890 -330 {
-lab=VOUT}
+N 490 -430 490 -380 {
+lab=DVDD}
 C {comparator_core.sym} 520 -300 0 0 {name=x1}
 C {comparator_bias.sym} 170 -250 0 0 {name=x2}
 C {devices/lab_wire.sym} 110 -370 3 0 {name=l1 sig_type=std_logic lab=VDD}
@@ -44,7 +44,7 @@ C {devices/lab_wire.sym} 530 -420 3 0 {name=l4 sig_type=std_logic lab=VSS}
 C {devices/lab_wire.sym} 360 -320 0 0 {name=l13 sig_type=std_logic lab=VINM}
 C {devices/lab_wire.sym} 360 -340 0 0 {name=l14 sig_type=std_logic lab=VINP}
 C {devices/ipin.sym} 120 -160 0 0 {name=p1 lab=VDD}
-C {devices/opin.sym} 890 -330 0 0 {name=p2 lab=VOUT}
+C {devices/opin.sym} 730 -330 0 0 {name=p2 lab=VOUT}
 C {devices/ipin.sym} 120 -140 0 0 {name=p3 lab=VSS}
 C {devices/ipin.sym} 120 -120 0 0 {name=p4 lab=VINP}
 C {devices/ipin.sym} 120 -100 0 0 {name=p5 lab=VINM}
@@ -56,6 +56,6 @@ C {devices/ipin.sym} 120 -200 0 0 {name=p6 lab=DVDD}
 C {devices/ipin.sym} 120 -180 0 0 {name=p7 lab=DVSS}
 C {devices/lab_pin.sym} 210 -200 0 0 {name=l7 sig_type=std_logic lab=DVDD}
 C {devices/lab_pin.sym} 210 -180 0 0 {name=l11 sig_type=std_logic lab=DVSS}
-C {lsbufhv2lv_1.sym} 770 -330 0 0 {name=x3 LVPWR=DVDD VGND=DVSS VNB=DVSS VPB=VDD VPWR=VDD prefix=sky130_fd_sc_hvl__ }
 C {devices/lab_wire.sym} 340 -290 0 0 {name=p8 sig_type=std_logic lab=VBP}
 C {devices/lab_wire.sym} 340 -270 0 0 {name=p9 sig_type=std_logic lab=VBN}
+C {devices/lab_wire.sym} 490 -430 3 0 {name=l6 sig_type=std_logic lab=DVDD}

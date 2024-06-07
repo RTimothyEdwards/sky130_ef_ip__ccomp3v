@@ -98,8 +98,8 @@ N 2740 -660 2740 -460 { lab=#net9}
 N 2740 -660 2770 -660 { lab=#net9}
 N 2810 -410 2810 -370 { lab=VSS}
 N 2810 -430 2810 -410 { lab=VSS}
-N 2810 -740 2810 -700 { lab=VDD}
-N 2810 -700 2810 -690 { lab=VDD}
+N 2810 -740 2810 -700 { lab=DVDD}
+N 2810 -700 2810 -690 { lab=DVDD}
 N 2550 -560 2740 -560 { lab=#net9}
 N 2810 -560 2900 -560 { lab=VOUT}
 N 680 -330 710 -330 { lab=VSS}
@@ -182,6 +182,8 @@ lab=VBN}
 N 1770 -730 1810 -730 { lab=VDD}
 N 460 -360 520 -360 {
 lab=VBP}
+N 2810 -740 2870 -740 {
+lab=DVDD}
 C {devices/lab_wire.sym} 640 -870 0 1 {name=l1 sig_type=power lab=VDD}
 C {devices/lab_wire.sym} 330 -580 0 1 {name=l2 sig_type=std_logic lab=VINM}
 C {devices/lab_wire.sym} 790 -580 0 0 {name=l3 sig_type=std_logic lab=VINP}
@@ -506,7 +508,7 @@ model=nfet_g5v0d10v5
 spiceprefix=X
 }
 C {devices/lab_wire.sym} 2810 -410 3 0 {name=l37 sig_type=ground lab=VSS}
-C {devices/lab_wire.sym} 2810 -740 3 0 {name=l38 sig_type=power lab=VDD}
+C {devices/lab_wire.sym} 2870 -740 0 0 {name=l38 sig_type=power lab=DVDD}
 C {devices/lab_wire.sym} 2900 -560 0 0 {name=l39 sig_type=std_logic lab=VOUT}
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 730 -330 0 0 {name=M23
 L=2
@@ -540,7 +542,7 @@ C {sky130_fd_pr/nfet_g5v0d10v5.sym} 20 -280 0 0 {name=M25
 L=2
 W=5
 nf=1
-mult=8
+mult=11
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -554,7 +556,7 @@ C {sky130_fd_pr/pfet_g5v0d10v5.sym} -50 -780 0 1 {name=M26
 L=2
 W=5
 nf=1
-mult=8
+mult=11
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -640,3 +642,4 @@ spiceprefix=X
 C {devices/lab_wire.sym} 1810 -730 0 0 {name=l45 sig_type=power lab=VDD}
 C {devices/lab_wire.sym} 1690 -730 0 1 {name=l40 sig_type=std_logic lab=VBN}
 C {devices/lab_wire.sym} 460 -360 0 1 {name=l44 sig_type=std_logic lab=VBP}
+C {devices/iopin.sym} 500 -1170 0 0 {name=p8 lab=DVDD}
