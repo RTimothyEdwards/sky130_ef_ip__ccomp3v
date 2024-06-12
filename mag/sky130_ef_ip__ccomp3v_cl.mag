@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1718227432
+timestamp 1718227409
 << dnwell >>
 rect -91 -2456 11101 10125
 << nwell >>
@@ -201,6 +201,7 @@ rect 10640 3417 11337 3922
 rect -140 1871 198 1971
 rect 10897 1738 11337 1838
 rect -140 1636 198 1736
+rect -140 1178 198 1278
 << via2 >>
 rect 4961 5935 5147 6175
 rect 9725 5949 10824 6163
@@ -244,10 +245,10 @@ use comparator_bias  comparator_bias_0
 timestamp 1717776168
 transform -1 0 518254 0 1 -639855
 box 507866 646042 518182 649916
-use comparator_core  comparator_core_0
-timestamp 1718227246
-transform 1 0 -506140 0 1 -641069
-box 506214 638825 517124 647001
+use comparator_core_cload  comparator_core_cload_0
+timestamp 1718227157
+transform 1 0 -506133 0 1 -641069
+box 506207 638825 517124 647001
 << labels >>
 flabel metal2 -140 1871 198 1971 0 FreeSans 1600 0 0 0 VINP
 port 1 nsew
@@ -263,4 +264,6 @@ flabel metal2 10902 3417 11337 3922 0 FreeSans 1600 0 0 0 DVDD
 port 5 nsew
 flabel metal2 10911 1738 11337 1838 0 FreeSans 1200 0 0 0 VOUT
 port 7 nsew
+flabel metal2 -140 1178 198 1278 0 FreeSans 1600 0 0 0 CLOAD
+port 8 nsew
 << end >>

@@ -66,28 +66,28 @@ VBN                                        |VBN
 ---------------------------------------------------------------------------------------
 Cell pin lists are equivalent.
 Device classes comparator_bias and comparator_bias are equivalent.
-Flattening unmatched subcell sky130_fd_pr__nfet_g5v0d10v5_99SHXG in circuit comparator_core (0)(1 instance)
-Flattening unmatched subcell sky130_fd_pr__pfet_g5v0d10v5_HHDTQV in circuit comparator_core (0)(1 instance)
-Flattening unmatched subcell sky130_fd_pr__nfet_g5v0d10v5_H9Q64V in circuit comparator_core (0)(1 instance)
-Flattening unmatched subcell sky130_fd_pr__pfet_g5v0d10v5_SK4LJA in circuit comparator_core (0)(2 instances)
-Flattening unmatched subcell sky130_fd_pr__pfet_g5v0d10v5_VKQJ4Z in circuit comparator_core (0)(1 instance)
-Flattening unmatched subcell sky130_fd_pr__pfet_g5v0d10v5_H998DU in circuit comparator_core (0)(1 instance)
-Flattening unmatched subcell sky130_fd_pr__nfet_g5v0d10v5_FXMKC5 in circuit comparator_core (0)(1 instance)
-Flattening unmatched subcell sky130_fd_pr__nfet_g5v0d10v5_CNFY23 in circuit comparator_core (0)(2 instances)
+Flattening unmatched subcell sky130_fd_pr__nfet_g5v0d10v5_99SHXG in circuit comparator_core_cload (0)(1 instance)
+Flattening unmatched subcell sky130_fd_pr__pfet_g5v0d10v5_HHDTQV in circuit comparator_core_cload (0)(1 instance)
+Flattening unmatched subcell sky130_fd_pr__nfet_g5v0d10v5_H9Q64V in circuit comparator_core_cload (0)(1 instance)
+Flattening unmatched subcell sky130_fd_pr__pfet_g5v0d10v5_SK4LJA in circuit comparator_core_cload (0)(2 instances)
+Flattening unmatched subcell sky130_fd_pr__pfet_g5v0d10v5_VKQJ4Z in circuit comparator_core_cload (0)(1 instance)
+Flattening unmatched subcell sky130_fd_pr__nfet_g5v0d10v5_CNFY23 in circuit comparator_core_cload (0)(2 instances)
+Flattening unmatched subcell sky130_fd_pr__nfet_g5v0d10v5_FXMKC5 in circuit comparator_core_cload (0)(1 instance)
+Flattening unmatched subcell sky130_fd_pr__pfet_g5v0d10v5_H998DU in circuit comparator_core_cload (0)(1 instance)
 
-Class comparator_core (0):  Merged 68 parallel devices.
+Class comparator_core_cload (0):  Merged 66 parallel devices.
 Subcircuit summary:
-Circuit 1: comparator_core                 |Circuit 2: comparator_core                 
+Circuit 1: comparator_core_cload           |Circuit 2: comparator_core_cload           
 -------------------------------------------|-------------------------------------------
-sky130_fd_pr__nfet_g5v0d10v5 (49->15)      |sky130_fd_pr__nfet_g5v0d10v5 (41->15)      
-sky130_fd_pr__pfet_g5v0d10v5 (48->14)      |sky130_fd_pr__pfet_g5v0d10v5 (39->14)      
-Number of devices: 29                      |Number of devices: 29                      
-Number of nets: 21                         |Number of nets: 21                         
+sky130_fd_pr__nfet_g5v0d10v5 (49->16)      |sky130_fd_pr__nfet_g5v0d10v5 (41->16)      
+sky130_fd_pr__pfet_g5v0d10v5 (48->15)      |sky130_fd_pr__pfet_g5v0d10v5 (39->15)      
+Number of devices: 31                      |Number of devices: 31                      
+Number of nets: 22                         |Number of nets: 22                         
 ---------------------------------------------------------------------------------------
 Netlists match uniquely.
 
 Subcircuit pins:
-Circuit 1: comparator_core                 |Circuit 2: comparator_core                 
+Circuit 1: comparator_core_cload           |Circuit 2: comparator_core_cload           
 -------------------------------------------|-------------------------------------------
 DVDD                                       |DVDD                                       
 VBP                                        |VBP                                        
@@ -97,35 +97,37 @@ VBN                                        |VBN
 VINP                                       |VINP                                       
 VINM                                       |VINM                                       
 VOUT                                       |VOUT                                       
+CLOAD                                      |CLOAD                                      
 ---------------------------------------------------------------------------------------
 Cell pin lists are equivalent.
-Device classes comparator_core and comparator_core are equivalent.
+Device classes comparator_core_cload and comparator_core_cload are equivalent.
 
-Cell sky130_ef_ip__ccomp3v (0) disconnected node: DVSS
-Cell sky130_ef_ip__ccomp3v (1) disconnected node: DVSS
+Cell sky130_ef_ip__ccomp3v_cl (0) disconnected node: DVSS
+Cell sky130_ef_ip__ccomp3v_cl (1) disconnected node: DVSS
 Subcircuit summary:
-Circuit 1: sky130_ef_ip__ccomp3v           |Circuit 2: sky130_ef_ip__ccomp3v           
+Circuit 1: sky130_ef_ip__ccomp3v_cl        |Circuit 2: sky130_ef_ip__ccomp3v_cl        
 -------------------------------------------|-------------------------------------------
 comparator_bias (1)                        |comparator_bias (1)                        
-comparator_core (1)                        |comparator_core (1)                        
+comparator_core_cload (1)                  |comparator_core_cload (1)                  
 Number of devices: 2                       |Number of devices: 2                       
-Number of nets: 8                          |Number of nets: 8                          
+Number of nets: 9                          |Number of nets: 9                          
 ---------------------------------------------------------------------------------------
 Netlists match uniquely.
 
 Subcircuit pins:
-Circuit 1: sky130_ef_ip__ccomp3v           |Circuit 2: sky130_ef_ip__ccomp3v           
+Circuit 1: sky130_ef_ip__ccomp3v_cl        |Circuit 2: sky130_ef_ip__ccomp3v_cl        
 -------------------------------------------|-------------------------------------------
 VINP                                       |VINP                                       
 VOUT                                       |VOUT                                       
 VINM                                       |VINM                                       
 DVDD                                       |DVDD                                       
+CLOAD                                      |CLOAD                                      
 VDD                                        |VDD                                        
 VSS                                        |VSS                                        
 DVSS                                       |DVSS                                       
 ---------------------------------------------------------------------------------------
 Cell pin lists are equivalent.
-Device classes sky130_ef_ip__ccomp3v and sky130_ef_ip__ccomp3v are equivalent.
+Device classes sky130_ef_ip__ccomp3v_cl and sky130_ef_ip__ccomp3v_cl are equivalent.
 
 Final result: Circuits match uniquely.
 .
