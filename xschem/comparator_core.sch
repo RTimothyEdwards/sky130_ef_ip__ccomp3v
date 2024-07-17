@@ -184,6 +184,20 @@ N 460 -360 520 -360 {
 lab=VBP}
 N 2810 -740 2870 -740 {
 lab=DVDD}
+N 2240 -730 2390 -730 {
+lab=VDD}
+N 2390 -870 2390 -760 {
+lab=VDD}
+N 2200 -870 2390 -870 {
+lab=VDD}
+N 2390 -700 2390 -560 {
+lab=VOUTANALOG}
+N 2430 -730 2460 -730 {
+lab=ena3v3}
+N 2460 -800 2460 -730 {
+lab=ena3v3}
+N 2460 -800 2480 -800 {
+lab=ena3v3}
 C {devices/lab_wire.sym} 640 -870 0 1 {name=l1 sig_type=power lab=VDD}
 C {devices/lab_wire.sym} 330 -580 0 1 {name=l2 sig_type=std_logic lab=VINM}
 C {devices/lab_wire.sym} 790 -580 0 0 {name=l3 sig_type=std_logic lab=VINP}
@@ -643,3 +657,19 @@ C {devices/lab_wire.sym} 1810 -730 0 0 {name=l45 sig_type=power lab=VDD}
 C {devices/lab_wire.sym} 1690 -730 0 1 {name=l40 sig_type=std_logic lab=VBN}
 C {devices/lab_wire.sym} 460 -360 0 1 {name=l44 sig_type=std_logic lab=VBP}
 C {devices/iopin.sym} 500 -1170 0 0 {name=p8 lab=DVDD}
+C {devices/ipin.sym} 370 -960 0 0 {name=p9 lab=ena3v3}
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} 2410 -730 0 1 {name=M30
+L=1
+W=0.5
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_g5v0d10v5
+spiceprefix=X
+}
+C {devices/lab_pin.sym} 2480 -800 0 1 {name=p10 sig_type=std_logic lab=ena3v3}

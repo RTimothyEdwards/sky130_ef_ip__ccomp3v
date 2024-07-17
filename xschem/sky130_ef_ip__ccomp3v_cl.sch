@@ -35,6 +35,18 @@ N 120 -60 210 -60 {
 lab=CLOAD}
 N 320 -300 370 -300 {
 lab=CLOAD}
+N 340 -220 370 -220 {
+lab=ena3v3}
+N 40 -220 70 -220 {
+lab=ena3v3}
+N 120 -40 360 -40 {
+lab=ENA}
+N 440 -40 500 -40 {
+lab=ena3v3}
+N 290 30 340 30 {
+lab=ENA}
+N 290 -40 290 30 {
+lab=ENA}
 C {comparator_bias.sym} 170 -230 0 0 {name=x2}
 C {devices/lab_wire.sym} 110 -350 3 0 {name=l1 sig_type=std_logic lab=VDD}
 C {devices/lab_wire.sym} 130 -350 3 0 {name=l2 sig_type=std_logic lab=VSS}
@@ -62,3 +74,10 @@ C {devices/ipin.sym} 120 -60 0 0 {name=p10 lab=CLOAD}
 C {devices/lab_pin.sym} 210 -60 0 1 {name=l12 sig_type=std_logic lab=CLOAD}
 C {comparator_core_cload.sym} 520 -300 0 0 {name=x3}
 C {devices/lab_wire.sym} 360 -300 0 0 {name=p11 sig_type=std_logic lab=CLOAD}
+C {devices/lab_pin.sym} 40 -220 0 0 {name=p12 sig_type=std_logic lab=ena3v3}
+C {devices/lab_pin.sym} 340 -220 0 0 {name=p13 sig_type=std_logic lab=ena3v3}
+C {devices/ipin.sym} 120 -40 0 0 {name=p14 lab=ENA}
+C {lsbuflv2hv_1.sym} 400 -40 0 0 {name=x1 LVPWR=DVDD VGND=DVSS VNB=DVSS VPB=VDD VPWR=VDD prefix=sky130_fd_sc_hvl__ }
+C {devices/lab_pin.sym} 500 -40 0 1 {name=p15 sig_type=std_logic lab=ena3v3}
+C {sky130_stdcells/diode_2.sym} 430 30 0 0 {name=x4 VGND=DVSS VNB=DVSS VPB=VDD VPWR=VDD prefix=sky130_fd_sc_hvl__ }
+C {sky130_stdcells/decap_4.sym} 430 80 0 0 {name=x5 VGND=DVSS VNB=DVSS VPB=VDD VPWR=VDD prefix=sky130_fd_sc_hvl__ }

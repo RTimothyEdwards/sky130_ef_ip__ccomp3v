@@ -11,7 +11,6 @@ N 120 -160 120 -90 { lab=VBN}
 N 40 -60 40 0 { lab=VSS}
 N 40 0 360 0 { lab=VSS}
 N 360 -60 360 0 { lab=VSS}
-N 40 -420 40 -120 { lab=VBN}
 N 360 -520 360 -120 { lab=#net1}
 N 80 -450 360 -450 { lab=#net1}
 N 40 -550 320 -550 { lab=#net2}
@@ -49,16 +48,6 @@ N -20 -610 20 -610 { lab=VDD}
 N 720 -410 720 -120 { lab=VBP}
 N 40 -700 40 -640 { lab=VDD}
 N 720 -470 720 -410 { lab=VBP}
-N -90 -130 -90 -0 { lab=VSS}
-N -90 -0 40 -0 { lab=VSS}
-N -50 -160 -40 -160 { lab=VSS}
-N -40 -160 -40 -100 { lab=VSS}
-N -90 -100 -40 -100 { lab=VSS}
-N -110 -160 -90 -160 { lab=VSS}
-N -110 -160 -110 -120 { lab=VSS}
-N -110 -120 -90 -120 { lab=VSS}
-N -90 -240 -90 -190 { lab=VBN}
-N -90 -240 40 -240 { lab=VBN}
 N 510 -340 520 -340 { lab=VSS}
 N 520 -340 520 -280 { lab=VSS}
 N 470 -280 520 -280 { lab=VSS}
@@ -78,6 +67,14 @@ N 1050 -120 1070 -120 { lab=VSS}
 N 1070 -240 1070 -190 { lab=VBP}
 N 720 -0 1070 0 { lab=VSS}
 N 720 -240 1070 -240 { lab=VBP}
+N 40 -420 40 -330 {
+lab=#net3}
+N 40 -270 40 -120 {
+lab=VBN}
+N -60 -300 -0 -300 {
+lab=ena3v3}
+N 40 -300 90 -300 {
+lab=VSS}
 C {devices/lab_wire.sym} 400 -550 0 0 {name=l1 sig_type=std_logic lab=VDD}
 C {devices/lab_wire.sym} 400 -90 0 0 {name=l2 sig_type=std_logic lab=VSS}
 C {devices/lab_wire.sym} 0 -450 0 1 {name=l3 sig_type=std_logic lab=VDD}
@@ -189,7 +186,7 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {sky130_fd_pr/nfet_g5v0d10v5.sym} -70 -160 0 1 {name=M8
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} 20 -300 0 0 {name=M8
 L=2
 W=5
 nf=1
@@ -233,7 +230,9 @@ spiceprefix=X
 }
 C {devices/lab_wire.sym} -20 -610 0 1 {name=l10 sig_type=std_logic lab=VDD}
 C {sky130_fd_pr/res_high_po_1p41.sym} 40 -610 0 0 {name=R2
-L=140
+L=135
 model=res_high_po_1p41
 spiceprefix=X
 mult=1}
+C {devices/ipin.sym} -60 -300 0 0 {name=p5 lab=ena3v3}
+C {devices/lab_wire.sym} 90 -300 0 0 {name=l11 sig_type=std_logic lab=VSS}

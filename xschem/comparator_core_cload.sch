@@ -224,6 +224,20 @@ N -350 -610 -350 -440 {
 lab=CLOAD}
 N -400 -530 -350 -530 {
 lab=CLOAD}
+N 2240 -730 2410 -730 {
+lab=VDD}
+N 2200 -870 2410 -870 {
+lab=VDD}
+N 2410 -870 2410 -760 {
+lab=VDD}
+N 2410 -700 2410 -560 {
+lab=VOUTANALOG}
+N 2450 -730 2480 -730 {
+lab=ena3v3}
+N 2480 -800 2480 -730 {
+lab=ena3v3}
+N 2480 -800 2510 -800 {
+lab=ena3v3}
 C {devices/lab_wire.sym} 640 -870 0 1 {name=l1 sig_type=power lab=VDD}
 C {devices/lab_wire.sym} 330 -580 0 1 {name=l2 sig_type=std_logic lab=VINM}
 C {devices/lab_wire.sym} 790 -580 0 0 {name=l3 sig_type=std_logic lab=VINP}
@@ -713,3 +727,19 @@ spiceprefix=X
 }
 C {devices/lab_pin.sym} -400 -530 0 0 {name=p9 sig_type=std_logic lab=CLOAD}
 C {devices/ipin.sym} 370 -970 0 0 {name=p10 lab=CLOAD}
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} 2430 -730 0 1 {name=M32
+L=0.5
+W=0.5
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_g5v0d10v5
+spiceprefix=X
+}
+C {devices/lab_pin.sym} 2510 -800 0 1 {name=p11 sig_type=std_logic lab=ena3v3}
+C {devices/ipin.sym} 370 -920 0 0 {name=p12 lab=ena3v3}
