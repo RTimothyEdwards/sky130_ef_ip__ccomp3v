@@ -5,6 +5,12 @@ K {}
 V {}
 S {}
 E {}
+T {Dummy devices} -80 -370 0 0 0.4 0.4 {}
+T {Dummy devices} -120 -720 0 0 0.4 0.4 {}
+T {Dummy input load} -320 -550 0 0 0.4 0.4 {}
+T {The dummy input load is to be used with a driver circuit
+such as a DAC that has an unused complementary output
+requiring a matching load.} -340 -160 0 0 0.4 0.4 {}
 N 420 -550 420 -470 { lab=#net1}
 N 430 -470 670 -470 { lab=#net1}
 N 700 -550 700 -470 { lab=#net1}
@@ -184,19 +190,53 @@ N 460 -360 520 -360 {
 lab=VBP}
 N 2810 -740 2870 -740 {
 lab=DVDD}
-N 2240 -730 2390 -730 {
+N -350 -440 -320 -440 { lab=CLOAD}
+N -280 -440 -260 -440 { lab=VSS}
+N -260 -440 -260 -400 { lab=VSS}
+N -280 -400 -260 -400 { lab=VSS}
+N -280 -410 -280 -360 { lab=VSS}
+N -280 -500 -280 -470 { lab=VSS}
+N -280 -360 -280 -200 {
+lab=VSS}
+N -280 -200 40 -200 {
+lab=VSS}
+N -280 -500 -260 -500 {
+lab=VSS}
+N -260 -500 -260 -440 {
+lab=VSS}
+N -280 -580 -280 -560 {
 lab=VDD}
-N 2390 -870 2390 -760 {
+N -280 -560 -260 -560 {
 lab=VDD}
-N 2200 -870 2390 -870 {
+N -260 -680 -260 -560 {
 lab=VDD}
-N 2390 -700 2390 -560 {
+N -280 -680 -260 -680 {
+lab=VDD}
+N -280 -870 -280 -640 {
+lab=VDD}
+N -280 -870 -70 -870 {
+lab=VDD}
+N -280 -610 -260 -610 {
+lab=VDD}
+N -350 -610 -320 -610 {
+lab=CLOAD}
+N -350 -610 -350 -440 {
+lab=CLOAD}
+N -400 -530 -350 -530 {
+lab=CLOAD}
+N 2240 -730 2410 -730 {
+lab=VDD}
+N 2200 -870 2410 -870 {
+lab=VDD}
+N 2410 -870 2410 -760 {
+lab=VDD}
+N 2410 -700 2410 -560 {
 lab=VOUTANALOG}
-N 2430 -730 2460 -730 {
+N 2450 -730 2480 -730 {
 lab=ena3v3}
-N 2460 -800 2460 -730 {
+N 2480 -800 2480 -730 {
 lab=ena3v3}
-N 2460 -800 2480 -800 {
+N 2480 -800 2510 -800 {
 lab=ena3v3}
 C {devices/lab_wire.sym} 640 -870 0 1 {name=l1 sig_type=power lab=VDD}
 C {devices/lab_wire.sym} 330 -580 0 1 {name=l2 sig_type=std_logic lab=VINM}
@@ -556,7 +596,7 @@ C {sky130_fd_pr/nfet_g5v0d10v5.sym} 20 -280 0 0 {name=M25
 L=2
 W=5
 nf=1
-mult=11
+mult=7
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -570,7 +610,7 @@ C {sky130_fd_pr/pfet_g5v0d10v5.sym} -50 -780 0 1 {name=M26
 L=2
 W=5
 nf=1
-mult=11
+mult=7
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -657,9 +697,38 @@ C {devices/lab_wire.sym} 1810 -730 0 0 {name=l45 sig_type=power lab=VDD}
 C {devices/lab_wire.sym} 1690 -730 0 1 {name=l40 sig_type=std_logic lab=VBN}
 C {devices/lab_wire.sym} 460 -360 0 1 {name=l44 sig_type=std_logic lab=VBP}
 C {devices/iopin.sym} 500 -1170 0 0 {name=p8 lab=DVDD}
-C {devices/ipin.sym} 370 -960 0 0 {name=p9 lab=ena3v3}
-C {sky130_fd_pr/pfet_g5v0d10v5.sym} 2410 -730 0 1 {name=M30
-L=1
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} -300 -440 0 0 {name=M30
+L=2
+W=5
+nf=1
+mult=4
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_g5v0d10v5
+spiceprefix=X
+}
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} -300 -610 0 0 {name=M31
+L=2
+W=5
+nf=1
+mult=4
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_g5v0d10v5
+spiceprefix=X
+}
+C {devices/lab_pin.sym} -400 -530 0 0 {name=p9 sig_type=std_logic lab=CLOAD}
+C {devices/ipin.sym} 370 -970 0 0 {name=p10 lab=CLOAD}
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} 2430 -730 0 1 {name=M32
+L=0.5
 W=0.5
 nf=1
 mult=1
@@ -672,4 +741,5 @@ sa=0 sb=0 sd=0
 model=pfet_g5v0d10v5
 spiceprefix=X
 }
-C {devices/lab_pin.sym} 2480 -800 0 1 {name=p10 sig_type=std_logic lab=ena3v3}
+C {devices/lab_pin.sym} 2510 -800 0 1 {name=p11 sig_type=std_logic lab=ena3v3}
+C {devices/ipin.sym} 370 -920 0 0 {name=p12 lab=ena3v3}

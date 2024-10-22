@@ -48,11 +48,19 @@ N 350 -40 350 -10 {
 lab=#net1}
 N 350 50 350 80 {
 lab=VSS}
+N 510 -210 530 -210 {
+lab=DVDD}
+N 440 -230 530 -230 {
+lab=#net1}
+N 440 -230 440 -40 {
+lab=#net1}
+N 400 -40 440 -40 {
+lab=#net1}
 C {devices/vsource.sym} 40 -90 0 0 {name=V1 value=0}
 C {devices/vsource.sym} 140 -90 0 0 {name=V2 value=3.3}
 C {devices/capa.sym} 920 -290 0 0 {name=C1
 m=1
-value=1p
+value=250f
 footprint=1206
 device="ceramic capacitor"}
 C {devices/lab_wire.sym} 920 -240 3 0 {name=l5 sig_type=std_logic lab=VSS}
@@ -70,10 +78,11 @@ C {devices/code.sym} 1050 -390 0 0 {name=TT_MODELS only_toplevel=false
 format="tcleval(@value )" value=".lib \\\\$::SKYWATER_MODELS\\\\/sky130.lib.spice tt"}
 C {devices/code_shown.sym} 1070 -150 0 0 {name=SPICE only_toplevel=false value=".tran 1n 20u
 .save all"}
-C {sky130_ef_ip__ccomp3v.sym} 680 -300 0 0 {name=x3}
 C {devices/code.sym} 1070 -60 0 0 {name=s1 only_toplevel=false value="
 .include /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice"}
 C {devices/vsource.sym} 200 -90 0 0 {name=V5 value=1.8}
 C {devices/lab_wire.sym} 200 -40 3 0 {name=l1 sig_type=std_logic lab=VSS}
 C {devices/lab_wire.sym} 200 -180 3 0 {name=l2 sig_type=std_logic lab=DVDD}
 C {devices/vsource.sym} 350 20 0 0 {name=V6 value="pwl(0 0 6u 0 6.01u 1.65 12u 1.65 12.01u 3.3)"}
+C {sky130_ef_ip__ccomp3v_cl.sym} 680 -300 0 0 {name=x1}
+C {devices/lab_pin.sym} 510 -210 0 0 {name=p1 sig_type=std_logic lab=DVDD}
