@@ -43,6 +43,8 @@ N 350 -240 370 -240 {
 lab=ena3v3}
 N 550 -430 550 -380 {
 lab=DVSS}
+N 290 -70 290 -10 {
+lab=ENA}
 C {devices/lab_wire.sym} 110 -370 3 0 {name=l1 sig_type=std_logic lab=VDD}
 C {devices/lab_wire.sym} 130 -370 3 0 {name=l2 sig_type=std_logic lab=VSS}
 C {devices/lab_wire.sym} 510 -420 3 0 {name=l3 sig_type=std_logic lab=VDD}
@@ -65,10 +67,11 @@ C {devices/lab_pin.sym} 210 -180 0 1 {name=l11 sig_type=std_logic lab=DVSS}
 C {devices/lab_wire.sym} 340 -270 0 0 {name=p9 sig_type=std_logic lab=VBN}
 C {devices/lab_wire.sym} 490 -430 3 0 {name=l6 sig_type=std_logic lab=DVDD}
 C {devices/ipin.sym} 120 -70 0 0 {name=p10 lab=ENA}
-C {lsbuflv2hv_1.sym} 360 -70 0 0 {name=x3 LVPWR=DVDD VGND=VSS VNB=VSS VPB=VDD VPWR=VDD prefix=sky130_fd_sc_hvl__ }
+C {lsbuflv2hv_1.sym} 360 -70 0 0 {name=x3 LVPWR=DVDD VGND=DVSS VNB=DVSS VPB=VDD VPWR=VDD prefix=sky130_fd_sc_hvl__ }
 C {devices/lab_pin.sym} 460 -70 0 1 {name=p11 sig_type=std_logic lab=ena3v3}
 C {devices/lab_pin.sym} 350 -240 0 0 {name=p12 sig_type=std_logic lab=ena3v3}
 C {devices/lab_pin.sym} 40 -240 0 0 {name=p13 sig_type=std_logic lab=ena3v3}
 C {comparator_high_gain.sym} 520 -300 0 0 {name=x1}
 C {scomp_bias.sym} 170 -250 0 0 {name=x2}
 C {devices/lab_wire.sym} 550 -430 3 0 {name=l12 sig_type=std_logic lab=DVSS}
+C {sky130_stdcells/diode_2.sym} 380 -10 0 0 {name=x4 VGND=DVSS VNB=DVSS VPB=VDD VPWR=VDD prefix=sky130_fd_sc_hvl__ }
