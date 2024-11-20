@@ -327,5 +327,5 @@ spiceprefix=X
 C {devices/lab_wire.sym} 380 -900 2 1 {name=l16 sig_type=power lab=VDD}
 C {devices/lab_wire.sym} 740 -900 2 0 {name=l18 sig_type=power lab=VDD}
 C {devices/lab_wire.sym} 900 -280 0 0 {name=l12 sig_type=ground lab=VSS}
-C {devices/ammeter.sym} 420 -820 0 0 {name=Vmeas savecurrent=true spice_ignore=0}
-C {devices/ammeter.sym} 700 -820 0 0 {name=Vmeas1 savecurrent=true spice_ignore=0}
+C {devices/ammeter.sym} 420 -820 0 0 {name=Vmeas savecurrent=true spice_ignore=0 lvs_ignore=short}
+C {devices/ammeter.sym} 700 -820 0 0 {name=Vmeas1 savecurrent=true spice_ignore=0 lvs_ignore=short}
